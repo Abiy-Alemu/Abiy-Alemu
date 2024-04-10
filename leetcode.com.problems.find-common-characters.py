@@ -8,5 +8,11 @@ class Solution:
         first_word_chars = set(words[0])
         common_letters = []
 
+        for letter in first_word_chars:
+            min_count = min([word.count(letter) for word in words])
+            common_letters += [letter] * min_count
+
+        return common_letters
+
 
 
